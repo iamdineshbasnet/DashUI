@@ -1,0 +1,118 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+$primary: #5d87ff;
+$secondary: #49beff;
+$success: #13deb9;
+$danger: #fa896b;
+$warning: #ffae1f;
+$info: #539bff;
+$light: #f6f9fc;
+$dark: #2a3547;
+
+$buttonColors: (
+	primary: $primary,
+	secondary: $secondary,
+	success: $success,
+	danger: $danger,
+	warning: $warning,
+	info: $info,
+	dark: $dark,
+	light: $light,
+);
+
+.main {
+	@include main;
+	
+	.section {
+		padding: 0 4rem;
+		@include sm {
+			padding: 0 2rem;
+		}
+
+		.outer_card {
+			box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
+			padding: 3rem 4rem;
+			border-radius: 0.4rem;
+			@include sm{
+				padding: 2rem 1.5rem;
+			}
+			.lists {
+				li {
+					list-style: none;
+					&:not(:last-child) {
+						margin-bottom: 6rem;
+					}
+					h6 {
+						@include font($primaryFont, 1.6rem, $subheading);
+                        text-transform: capitalize;
+					}
+					.inner_card {
+						margin-top: 1rem;
+						box-shadow: .5rem .5rem 1.5rem rgba($color: #000000, $alpha: 0.1);
+						padding: 3rem 2rem;
+						.button_wrapper {
+							@include flex(flex-start, flex-start, column, 1rem);
+							flex-wrap: wrap;
+							button {
+                                width: 100%;
+                                text-align: left;
+								padding: 1rem 1.5rem;
+								border-radius: .4rem;
+								color: white;
+								text-transform: capitalize;
+								border: none;
+								cursor: pointer;
+                                background-color: transparent;
+								transition: all 0.5s;
+								
+								
+								&.primary {
+									background: rgba($color: $primary, $alpha: .2);
+                                    border: .1rem solid rgba($color: $primary, $alpha: .3);
+                                    color: $primary;
+								}
+								&.secondary {
+									background: rgba($color: $secondary, $alpha: .2);
+                                    border: .1rem solid rgba($color: $secondary, $alpha: .3);
+                                    color: $secondary;
+								}
+								&.success {
+									background: rgba($color: $success, $alpha: .2);
+                                    border: .1rem solid rgba($color: $success, $alpha: .3);
+                                    color: $success;
+								}
+								&.danger {
+									background: rgba($color: $danger, $alpha: .2);
+                                    border: .1rem solid rgba($color: $danger, $alpha: .3);
+                                    color: $danger;
+								}
+								&.warning {
+									background: rgba($color: $warning, $alpha: .2);
+                                    border: .1rem solid rgba($color: $warning, $alpha: .3);
+                                    color: $warning;
+								}
+								&.info {
+									background: rgba($color: $info, $alpha: .2);
+                                    border: .1rem solid rgba($color: $info, $alpha: .3);
+                                    color: $info;
+								}
+								&.dark {
+									background: rgba($color: $dark, $alpha: .2);
+                                    border: .1rem solid rgba($color: $dark, $alpha: .3);
+                                    color: $dark;
+								}
+								&.light {
+                                    color: black;
+									background: $light;
+                                    border: .1rem solid rgba($color: $light, $alpha: .3);
+								}
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

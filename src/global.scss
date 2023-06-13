@@ -1,0 +1,21 @@
+@import './styles/variables';
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primaryFont;
+    user-select: none;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #FFF;
+    max-height: 100vh;
+	overflow: hidden;
+
+}

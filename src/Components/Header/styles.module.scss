@@ -1,0 +1,77 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.header{
+    @include position(absolute, 0, null, 30rem, null, null, null);
+    width: calc(100vw - 30rem);
+    @include md{
+        left: 0;
+        width: 100%;
+    }
+    nav{
+        @include flex(center, space-between, row, null);
+        width: 100%;
+        padding: 1.5rem 3rem 1rem;
+        @include sm{
+            padding: 1.5rem 1rem 1rem;
+        }
+        .row{
+            position: relative;
+            @include flex(center, flex-start, row, 0rem);
+            .icon_wrapper{
+                position: relative;
+                width: 4rem;
+                height: 4rem;
+                @include flex(center, center, row, null);
+                border-radius: 50%;
+                padding: .5rem;
+                background-color: white;
+                transition:  all .5s ;
+                cursor: pointer;
+                &:first-child{
+                    @include lg{
+                        display: none;
+                    }
+                    .icon{
+                        font-size: 2.2rem;
+                    }
+                }
+                .icon{
+                    transition:  all .5s ;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    color: rgb(100, 100, 100);
+    
+                }
+                &:hover{
+                    background-color: rgba($color: $primaryColor, $alpha: .1);
+                    .icon{
+                        color: $primaryColor;
+                    }
+                }
+                .dot{
+                    width: .8rem;
+                    height: .8rem;
+                    background-color: $primaryColor;
+                    border-radius: 50%;
+                    @include position(absolute, .8rem, null, null, .4rem, null, null);
+                }
+
+            }
+            .image_wrapper{
+                border-radius: 50%;
+                overflow: hidden;
+                width: 3rem;
+                height: 3rem;
+                border: .1rem solid rgb(220, 220, 220);
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                }
+            }
+        }
+    }
+}

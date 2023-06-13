@@ -1,0 +1,121 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.aside {
+	max-width: 30rem;
+	padding: 2rem 4rem 2rem 2rem;
+	border-right: 0.1rem solid rgb(220, 220, 220);
+	max-height: 100vh;
+	background-color: white;
+    .close_icon{
+        display: none;
+    }
+
+	@include md {
+		@include position(absolute, 0, null, 0, null, -100%, 0);
+		transition: all 0.5s;
+		z-index: 111;
+		&.active {
+			@include position(absolute, 0, 0, 0, null, 0%, 0);
+            .close_icon {
+                @include position(absolute, 2rem, 0, null, 0%, 50%, 0);
+                border: 0.1rem solid rgb(220, 220, 220);
+                border-radius: 50%;
+                width: 3rem;
+                height: 3rem;
+                background-color: white;
+                @include flex(center, center, row, null);
+                @include lg{
+                    display: none;
+                    opacity: 0;
+                }
+                .icon {
+                    font-size: 2rem;
+                    color: rgb(100, 100, 100);
+                }
+            }
+		}
+	}
+	.section {
+		position: relative;
+		.list_wrapper {
+			margin-top: 2rem;
+			padding: 3rem 1rem;
+			overflow-y: scroll;
+			max-height: 90vh;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			.list {
+				.title {
+					text-transform: uppercase;
+					@include font($primaryFont, 1.2rem, $heading);
+				}
+				.items {
+					margin-bottom: 3rem;
+					li {
+						list-style: none;
+						padding: 1rem 1rem;
+						margin-top: 0.5rem;
+						border-radius: $buttonBorderRadius;
+						@include flex(center, flex-start, row, 1rem);
+						cursor: pointer;
+						background-color: white;
+						transition: all 0.5s;
+						.icon {
+							font-size: 2rem;
+							color: black;
+							transition: all 0.5s;
+						}
+
+						p {
+							@include font($primaryFont, 1.5rem, $title);
+							text-transform: capitalize;
+							color: black;
+							transition: all 0.5s;
+						}
+						&.active {
+							background-color: rgba(
+								$color: $primaryColor,
+								$alpha: 1
+							);
+							transition: all 0.5s;
+							.icon {
+								color: white;
+								transition: all 0.5s;
+							}
+							p {
+								transition: all 0.5s;
+								color: white;
+							}
+							&:hover {
+								background-color: rgba(
+									$color: $primaryColor,
+									$alpha: 1
+								);
+								.icon {
+									color: white;
+								}
+								p {
+									color: white;
+								}
+							}
+						}
+						&:hover {
+							background-color: rgba(
+								$color: $primaryColor,
+								$alpha: 0.1
+							);
+							.icon {
+								color: $primaryColor;
+							}
+							p {
+								color: $primaryColor;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

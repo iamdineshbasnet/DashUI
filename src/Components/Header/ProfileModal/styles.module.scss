@@ -1,0 +1,44 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.profile_modal {
+	@include appModal;
+	background-color: white;
+	z-index: 11;
+	.container {
+		width: max-content;
+		min-width: 20rem;
+		
+		.list {
+			padding: 0.5rem 0;
+			border: 0.1rem solid rgb(220, 220, 220);
+			border-radius: 0.4rem;
+			li {
+				padding: 1rem 2rem;
+				list-style: none;
+				cursor: pointer;
+				border-radius: $buttonBorderRadius;
+				@include flex(center, flex-start, row, 1rem);
+				background-color: white;
+				.icon {
+					font-size: 2rem;
+					color: #727272;
+				}
+				.text {
+					@include font($primaryFont, 1.4rem, $subheading);
+					text-transform: capitalize;
+					color: #727272;
+				}
+				&:hover {
+					background-color: rgba($color: $primaryColor, $alpha: 0.1);
+				}
+			}
+			.button_wrapper {
+				padding: 1rem 2.5rem;
+				button {
+					@include buttonOutline(100%);
+				}
+			}
+		}
+	}
+}

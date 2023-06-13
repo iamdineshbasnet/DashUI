@@ -1,0 +1,194 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+$primary: #5d87ff;
+$secondary: #49beff;
+$success: #13deb9;
+$danger: #fa896b;
+$warning: #ffae1f;
+$info: #539bff;
+$light: #f6f9fc;
+$dark: #2a3547;
+$link: transparent;
+
+$buttonColors: (
+	primary: $primary,
+	secondary: $secondary,
+	success: $success,
+	danger: $danger,
+	warning: $warning,
+	info: $info,
+	dark: $dark,
+	light: $light,
+	link: $link,
+);
+
+.main {
+	@include main;
+	@include sm{
+		overflow: scroll;
+		max-height: calc(100vh - 6rem);
+		padding: 3rem 0;
+
+	}
+	.section {
+		padding: 0 4rem;
+		@include sm {
+			padding: 0 2rem;
+		}
+
+		.outer_card {
+			box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
+			padding: 3rem 4rem;
+			border-radius: 0.4rem;
+			@include sm{
+				padding: 2rem 1.5rem;
+			}
+			.lists {
+				li {
+					list-style: none;
+					&:not(:last-child) {
+						margin-bottom: 6rem;
+					}
+					h6 {
+						@include font($primaryFont, 1.6rem, $subheading);
+                        text-transform: capitalize;
+					}
+					.inner_card {
+						margin-top: 1rem;
+						box-shadow: .5rem .5rem 1.5rem rgba($color: #000000, $alpha: 0.1);
+						padding: 3rem 2rem;
+						.button_wrapper {
+							@include flex(center, flex-start, row, 1rem);
+							flex-wrap: wrap;
+							button {
+								padding: 1rem 1.5rem;
+								border-radius: $buttonBorderRadius;
+								color: white;
+								text-transform: capitalize;
+								border: none;
+								cursor: pointer;
+                                background-color: transparent;
+								transition: all 0.5s;
+								&:hover {
+									@each $buttonClass, $color in $buttonColors
+									{
+										&.#{$buttonClass} {
+											background: darken($color, 15%);
+										}
+									}
+								}
+								
+								&.primary {
+									background: $primary;
+								}
+								&.secondary {
+									background: $secondary;
+								}
+								&.success {
+									background: $success;
+								}
+								&.danger {
+									background: $danger;
+								}
+								&.warning {
+									background: $warning;
+								}
+								&.info {
+									background: $info;
+								}
+								&.dark {
+									background: $dark;
+								}
+								&.light {
+                                    color: black;
+									background: transparent;
+								}
+								&.link {
+									color: $primaryColor;
+									text-decoration: underline;
+								}
+								&.primary_outlined {
+									border: .1rem solid $primary;
+                                    color: $primary;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $primary;
+                                        color: white;
+                                    }
+								}
+								&.secondary_outlined {
+									border: .1rem solid $secondary;
+                                    color: $secondary;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $secondary;
+                                        color: white;
+                                    }
+								}
+								&.success_outlined {
+									border: .1rem solid $success;
+                                    color: $success;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $success;
+                                        color: white;
+                                    }
+								}
+								&.danger_outlined {
+									border: .1rem solid $danger;
+                                    color: $danger;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $danger;
+                                        color: white;
+                                    }
+								}
+								&.warning_outlined {
+									border: .1rem solid $warning;
+                                    color: $warning;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $warning;
+                                        color: white;
+                                    }
+								}
+								&.info_outlined {
+									border: .1rem solid $info;
+                                    color: $info;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $info;
+                                        color: white;
+                                    }
+								}
+								&.dark_outlined {
+									border: .1rem solid $dark;
+                                    color: $dark;
+                                    transition: all .5s;
+                                    &:hover{
+                                        background-color: $dark;
+                                        color: white;
+                                    }
+								}
+								&.light_outlined {
+									border: .1rem solid transparent;
+                                    color:  $dark;
+                                    transition: all .5s;
+                                    &:hover{
+                                        color: $dark;
+                                        background: $light;
+                                    }
+
+								}
+								&.link_outlined {
+									color: black;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
