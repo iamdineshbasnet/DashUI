@@ -19,3 +19,11 @@ body{
 	overflow: hidden;
 
 }
+
+
+#area_chart{
+    .apexcharts-inner {
+        transform: translate(0,0%)  !important;
+    }
+
+}

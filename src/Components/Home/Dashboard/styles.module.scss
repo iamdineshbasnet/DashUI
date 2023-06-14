@@ -1,0 +1,124 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.main {
+	@include main;
+
+	.section {
+		padding: 0 4rem;
+		@include sm {
+			padding: 0 2rem;
+		}
+
+		.row {
+			display: grid;
+			grid-template-columns: 1.3fr 0.7fr;
+			gap: 2rem;
+			@include md{
+				grid-template-columns: repeat(1, 1fr);
+			}
+			div {
+				.card {
+					width: 100%;
+					min-width: 30rem;
+					box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
+					padding: 2rem;
+					border-radius: 0.6rem;
+					position: relative;
+					min-height: 15rem;
+					overflow: hidden;
+
+
+					.top_row {
+						margin-bottom: 1.5rem;
+						@include flex(center, space-between, row, null);
+						h4 {
+							@include font($primaryFont, 1.6rem, $subheading);
+							color: rgb(85, 85, 85);
+							text-transform: capitalize;
+						}
+						.icon_wrapper{
+							width: 4rem;
+							height: 4rem;
+							border-radius: 50%;
+							background-color: darken($secondaryColor, 10%);
+							@include flex(center, center, row, null);
+							.icon{
+								color: white;
+								font-size: 2rem;
+								
+							}
+						}
+					}
+					.pie_card_content, .area_card_content {
+						margin-top: 1rem;
+						@include flex(flex-start, space-between, row, null);
+						h4 {
+							@include font($primaryFont, 2rem, $subheading);
+						}
+						.text {
+							margin-top: 0.5rem;
+							@include flex(center, flex-start, row, 1rem);
+							.icon_wrapper {
+								background: rgb(236, 255, 236);
+								@include flex(center, center, row, null);
+								width: 2rem;
+								height: 2rem;
+								padding: .4rem;
+								border-radius: 50%;
+								.icon {
+									color: rgb(0, 204, 0);
+									font-size: 1.8rem;
+								}
+							}
+							p {
+								@include font($primaryFont, 1.3rem, $text);
+								color: black;
+								span {
+									color: rgb(85, 85, 85);
+								}
+							}
+						}
+						.date {
+							margin-top: 1.5rem;
+							@include flex(center, flex-start, row, 3rem);
+							p {
+								@include font($primaryFont, 1.2rem, $title);
+								position: relative;
+								@include flex(center, flex-start, row, 1rem);
+								.circle {
+									background: rgb(186, 186, 186);
+									width: 0.6rem;
+									height: 0.6rem;
+									border-radius: 50%;
+									&.filled_circle{
+										background-color: $primaryColor;
+									}
+								}
+							}
+						}
+					}
+					.area_card_content{
+						padding-bottom: 6rem;
+						.text{
+							.icon_wrapper{
+								background: rgb(255, 236, 236);
+								.icon{
+									color: rgb(204, 0, 0)
+								}
+							}
+						}
+					}
+					.area_chart_wrapper {
+						width: 100%;
+						@include position(absolute, null, 0, 0, null, -0%, 64%);
+					}
+				}
+
+				&.right {
+					@include flex(flex-start, space-between, column, 2rem);
+				}
+			}
+		}
+	}
+}
