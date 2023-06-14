@@ -1,5 +1,4 @@
 import styles from './styles.module.scss';
-
 const Buttons = () => {
 	return (
 		<main className={styles.main}>

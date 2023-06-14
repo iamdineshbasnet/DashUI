@@ -6,7 +6,7 @@
         margin-bottom: 2rem;
         h4{
             @include font($primaryFont, 1.6rem, $subheading);
-            user-select: text;
+            user-select: text; 
         }
     }
 
