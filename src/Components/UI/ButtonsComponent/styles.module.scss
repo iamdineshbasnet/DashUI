@@ -25,12 +25,7 @@ $buttonColors: (
 
 .main {
 	@include main;
-	@include sm{
-		overflow: scroll;
-		max-height: calc(100vh - 6rem);
-		padding: 3rem 0;
-
-	}
+	
 	.section {
 		padding: 0 4rem;
 		@include sm {

@@ -34,7 +34,14 @@
     border-radius: $buttonBorderRadius;
     transition:  all .5s;
     &:hover{
-        background-color: darken($primaryColor, 15%);
+        background-color: darken($primaryColor, 10%);
+    }
+    &:disabled{
+        pointer-events: none;
+        opacity: .6;
+        &:hover{
+            background: darken($primaryColor, 0%);
+        }
     }
 }
 
@@ -75,6 +82,12 @@
 @mixin main{
     @include position(absolute, 8rem, null, 30rem, null, null, null);
 	width: calc(100vw - 30rem);
+    overflow: scroll;
+	max-height: calc(100vh - 6rem);
+	padding: 1rem 0 4rem;
+    &::-webkit-scrollbar{
+        display: none;
+    }
     @include xs{
         top: 6rem;
     }
