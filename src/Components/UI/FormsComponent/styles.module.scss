@@ -1,29 +1,9 @@
 @import '../../../styles/mixins';
 @import '../../../styles/variables';
 
-$primary: #5d87ff;
-$secondary: #49beff;
-$success: #13deb9;
-$danger: #fa896b;
-$warning: #ffae1f;
-$info: #539bff;
-$light: #f6f9fc;
-$dark: #2a3547;
-
-$buttonColors: (
-	primary: $primary,
-	secondary: $secondary,
-	success: $success,
-	danger: $danger,
-	warning: $warning,
-	info: $info,
-	dark: $dark,
-	light: $light,
-);
-
 .main {
 	@include main;
-   
+
 	.section {
 		padding: 0 4rem;
 		@include sm {
@@ -52,88 +32,118 @@ $buttonColors: (
 						box-shadow: 0.5rem 0.5rem 1.5rem
 							rgba($color: #000000, $alpha: 0.1);
 						padding: 3rem 2rem;
-                        border-radius: .4rem;
-                        .sub_heading{
-                            @include font($primaryFont, 2rem, $title);
-                            margin-bottom: 2rem;
-                            color: rgba($color: #000000, $alpha: 0.7);
-                        }
-                        form{
-                            .input_group{
-                                &:not(:last-child){
-                                    margin-bottom: 2rem;
-                                }
-                                .input_field{
-                                    @include flex(flex-start, flex-start, column, .8rem);
-                                    label{
-                                        @include font($primaryFont, 1.4rem, $title);
+						border-radius: 0.4rem;
+						.sub_heading {
+							@include font($primaryFont, 2rem, $title);
+							margin-bottom: 2rem;
+							color: rgba($color: #000000, $alpha: 0.7);
+						}
+						form {
+							.input_group {
+								&:not(:last-child) {
+									margin-bottom: 2rem;
+								}
+								.input_field {
+									@include flex(
+										flex-start,
+										flex-start,
+										column,
+										0.8rem
+									);
+									label {
+										@include font(
+											$primaryFont,
+											1.4rem,
+											$title
+										);
+										cursor: pointer;
+										&.disabled {
+											pointer-events: none;
+										}
+									}
+									input,
+									select {
+										width: 100%;
+										border: 0.1rem solid rgb(220, 220, 220);
+										border-radius: 0.4rem;
+										padding: 1rem;
+										@include font(
+											$primaryFont,
+											1.4rem,
+											$title
+										);
+										color: gray;
+										&:focus {
+											outline: none;
+										}
+										&:disabled {
+											background-color: rgba(
+												$color: $primaryColor,
+												$alpha: 0.1
+											);
+										}
+									}
+								}
+								.check_field {
+									@include flex(
+										center,
+										flex-start,
+										row,
+										0.5rem
+									);
+									width: max-content;
+									&.disabled {
+										pointer-events: none;
+										opacity: 0.8;
+										label {
+											pointer-events: none;
+										}
+									}
+									label {
+										@include font(
+											$primaryFont,
+											1.4rem,
+											$title
+										);
+										cursor: pointer;
+										color: gray;
+									}
+									.checkbox {
+										width: 2rem;
+										height: 2rem;
+										border-radius: 0.4rem;
+										border: 0.1rem solid rgb(220, 220, 220);
+										@include flex(
+											center,
+											center,
+											row,
+											null
+										);
+										transition: all 0.5s;
                                         cursor: pointer;
-                                        &.disabled{
-                                            pointer-events: none;
-                                        }
-                                    }
-                                    input, select{
-                                        width: 100%;
-                                        border: .1rem solid rgb(220, 220, 220);
-                                        border-radius: .4rem;
-                                        padding: 1rem ;
-                                        @include font($primaryFont, 1.4rem, $title);
-                                        color: gray;
-                                        &:focus{
-                                            outline: none;
-                                        }
-                                        &:disabled{
-                                            background-color: rgba($color: $primaryColor, $alpha: 0.1);
-                                        }
-                                    }
-                                }
-                                .check_field{
-                                    @include flex(center, flex-start, row, .5rem);
-                                    width: max-content;
-                                    &.disabled{
-                                       pointer-events: none;
-                                        opacity: .8;
-                                        label{
-                                           pointer-events: none;
-                                        }
-                                    }
-                                    label{
-                                        @include font($primaryFont, 1.4rem, $title);
-                                        cursor: pointer;
-                                        color: gray;
-                                    }
-                                    .checkbox{
-                                        width: 2rem;
-                                        height: 2rem;
-                                        border-radius: .4rem;
-                                        border: .1rem solid rgb(220, 220, 220);
-                                        @include flex(center, center,row, null);
-                                        transition:  all .5s;
-                                        &.selected{
-                                            background-color: $primary;
-                                        }
-                                        .icon{
-                                            opacity: 0;
-                                            transition: all .5s;
-                                            color: white;
-                                            &.show{
-                                                opacity: 1;
-                                            }
-                                        }
-                                    }
-                                    
-                                }
-                                .note_text{
-                                    margin-top: .5rem;
-                                    @include font($primaryFont, 1.2rem, $text);
-                                    color: gray;
-                                }
-
-                            }
-                            button{
-                                @include button(max-content);
-                            }
-                        }
+										&.selected {
+											background-color: $primaryColor;
+										}
+										.icon {
+											opacity: 0;
+											transition: all 0.5s;
+											color: white;
+											&.show {
+												opacity: 1;
+											}
+										}
+									}
+								}
+								.note_text {
+									margin-top: 0.5rem;
+									@include font($primaryFont, 1.2rem, $text);
+									color: gray;
+								}
+							}
+							button {
+								@include button(max-content);
+							}
+						}
 					}
 				}
 			}

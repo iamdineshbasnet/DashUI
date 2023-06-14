@@ -8,18 +8,22 @@ import Alerts from './Components/UI/AlertsComponent/Alerts';
 import Cards from './Components/UI/CardsComponents/Cards';
 import Typography from './Components/UI/TypographyComponents/Typography';
 import Forms from './Components/UI/FormsComponent/Forms';
+import Login from './Components/Auth/Login/Login';
+import Register from './Components/Auth/Register/Register';
 function App() {
 	return (
 		<>
 			<Provider store={store}>
-				<Layout />
+
 				<Routes>
-					<Route path="/" element={<Dashboard />} />
-					<Route path="/buttons" element={<Buttons />} />
-					<Route path="/alerts" element={<Alerts />} />
-					<Route path="/cards" element={<Cards />} />
-					<Route path="/forms" element={<Forms />} />
-					<Route path="/typography" element={<Typography />} />
+					<Route path="/" element={<Layout><Dashboard /></Layout>} />
+					<Route path="/buttons" element={<Layout><Buttons /></Layout>} />
+					<Route path="/alerts" element={<Layout><Alerts /></Layout>} />
+					<Route path="/cards" element={<Layout><Cards /></Layout>} />
+					<Route path="/forms" element={<Layout><Forms /></Layout>} />
+					<Route path="/typography" element={<Layout><Typography /></Layout>} />
+					<Route path="/login" element={<><Login /></>} />
+					<Route path="/register" element={<><Register /></>} />
 				</Routes>
 			</Provider>
 		</>
