@@ -1,0 +1,58 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
+.card_wrapper{
+    header{
+        margin-bottom: 2rem;
+        h4{
+            @include font($primaryFont, 1.6rem, $subheading);
+            user-select: text;
+        }
+    }
+
+    .card{
+        box-shadow: 0 0 1rem rgba($color: #000000, $alpha: .1);
+        // width: max-content;
+        max-width: max-content;
+        border-radius: .4rem;
+        overflow: hidden;
+        
+        .card_content{
+            max-width: 35rem;
+            padding: 2rem;
+
+            .card_title{
+                @include font($primaryFont, 1.8rem, $title);
+                user-select: text;
+            }
+
+            .card_subtitle{
+                @include font($primaryFont, 1.5rem, $title);
+                color: gray;
+            }
+
+            .card_description{
+                margin: 1.5rem 0;
+                @include font($primaryFont, 1.4rem, $text );
+                color: gray;
+                user-select: text;
+                width: fit-content;
+            }
+
+            .button_wrapper{
+                @include flex(center, flex-start, row, 2rem);
+                button{
+                   border: none;
+                   background-color: transparent;
+                   a{
+                       text-decoration: none;
+                       color: $primaryColor;
+                       @include font($primaryFont, 1.4rem, $text);
+
+                   }
+                }
+
+            }
+        }
+    }
+}

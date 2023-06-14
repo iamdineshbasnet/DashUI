@@ -8,12 +8,19 @@
 		@include sm {
 			padding: 0 2rem;
 		}
-		.card {
+		.card_wrapper {
 			box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
 			padding: 3rem 4rem;
 			border-radius: 0.4rem;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
 			@include sm {
 				padding: 2rem 1.5rem;
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include xs{
+				grid-template-columns: repeat(1, 1fr);
 			}
 		}
 	}

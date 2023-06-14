@@ -23,6 +23,21 @@
     transform: translate($translateX, $translateY);
 }
 
+@mixin button($width){
+    width: $width;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: .8rem 1.2rem;
+    border: none;
+    color: white;
+    background: $primaryColor;
+    border-radius: $buttonBorderRadius;
+    transition:  all .5s;
+    &:hover{
+        background-color: darken($primaryColor, 15%);
+    }
+}
+
 @mixin buttonOutline($width){
     width: $width;
     border: .1rem solid $primaryColor;
