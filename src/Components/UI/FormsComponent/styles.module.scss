@@ -3,9 +3,10 @@
 
 .main {
 	@include main;
-
+	
 	.section {
 		padding: 0 4rem;
+		width: 100%;
 		@include sm {
 			padding: 0 2rem;
 		}
@@ -16,6 +17,7 @@
 			border-radius: 0.4rem;
 			@include sm {
 				padding: 2rem 1.5rem;
+				width: 100%;
 			}
 			.lists {
 				li {

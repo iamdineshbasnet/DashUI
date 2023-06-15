@@ -15,6 +15,7 @@
 		min-width: 40rem;
 		@include sm{
 			width: 100%;
+			min-width: 20rem;
 			padding: 4rem 2rem 2rem;
 		}
 		@include md{
@@ -116,6 +117,7 @@
                     @include font($primaryFont, 1.4rem, $title);
                     color: $primaryColor;
                     cursor: pointer;
+					text-align: right;
 
                 }
 

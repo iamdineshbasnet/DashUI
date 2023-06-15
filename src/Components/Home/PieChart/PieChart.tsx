@@ -24,17 +24,11 @@ const PieChart: React.FC = () => {
 		tooltip: {
 			theme: 'dark',
 			enabled: true,
-		}
+		},
 	};
 
 	return (
-		<section
-			id="pie_chart"
-			style={{
-				maxWidth: '15rem',
-				display: 'flex',
-				justifyContent: 'flex-end',
-			}}>
+		<section id="pie_chart">
 			<Chart
 				options={options}
 				series={series}

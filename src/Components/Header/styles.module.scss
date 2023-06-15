@@ -4,6 +4,7 @@
 .header{
     @include position(absolute, 0, null, 30rem, null, null, null);
     width: calc(100vw - 30rem);
+    max-width: 120rem;
     @include md{
         left: 0;
         width: 100%;
@@ -13,7 +14,7 @@
         width: 100%;
         padding: 1.5rem 3rem 1rem;
         @include sm{
-            padding: 1.5rem 1rem 1rem;
+            padding: 1.5rem 1rem 0rem;
         }
         .row{
             position: relative;

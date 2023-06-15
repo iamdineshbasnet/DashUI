@@ -80,11 +80,13 @@
 }
 
 @mixin main{
-    @include position(absolute, 8rem, null, 30rem, null, null, null);
+    @include position(absolute, 6rem, null, 30rem, null, null, null);
 	width: calc(100vw - 30rem);
+    max-width: 120rem;
     overflow: scroll;
 	max-height: calc(100vh - 6rem);
-	padding: 1rem 0 4rem;
+	padding: 2rem 0 8rem;
+    // @include flex(center, center, row, null);
     &::-webkit-scrollbar{
         display: none;
     }
@@ -93,7 +95,7 @@
     }
     @include sm{
 		overflow: scroll;
-		max-height: calc(100vh - 6rem);
+		max-height: calc(100vh - 4rem);
 		padding: 3rem 0;
 
 	}

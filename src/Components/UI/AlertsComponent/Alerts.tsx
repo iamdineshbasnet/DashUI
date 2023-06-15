@@ -139,7 +139,7 @@ const Alerts = () => {
 										onClick={() =>
 											handleToast('primary', 'primary')
 										}>
-										A simple primary alert—check it out!
+										A simple primary alert—check it out! 
 									</button>
 									<button
 										className={styles.secondary}

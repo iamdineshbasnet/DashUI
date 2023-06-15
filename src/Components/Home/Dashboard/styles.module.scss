@@ -3,31 +3,48 @@
 
 .main {
 	@include main;
-
 	.section {
-		padding: 0 4rem;
+		padding: 0 3rem;
+		width: 100%;
 		@include sm {
 			padding: 0 2rem;
 		}
-
+		
 		.row {
+
 			display: grid;
-			grid-template-columns: 1.3fr 0.7fr;
+			grid-template-columns: 1.5fr 0.5fr;
 			gap: 2rem;
-			@include md{
+			width: 100%;
+			&:not(:last-child){
+				margin-bottom: 3rem;
+			}
+			@include sm{
 				grid-template-columns: repeat(1, 1fr);
 			}
-			div {
+			&.product_row{
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				@include md{
+					grid-template-columns: repeat(2, 1fr);
+				}
+				@include xs{
+					grid-template-columns: repeat(1, 1fr);
+				}
+			}
+			.card_wrapper {
 				.card {
 					width: 100%;
-					min-width: 30rem;
+					// min-width: 30rem;
 					box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
 					padding: 2rem;
 					border-radius: 0.6rem;
 					position: relative;
 					min-height: 15rem;
 					overflow: hidden;
-
+					@include md{
+						min-width: 100%;
+					}
 
 					.top_row {
 						margin-bottom: 1.5rem;
@@ -53,6 +70,9 @@
 					.pie_card_content, .area_card_content {
 						margin-top: 1rem;
 						@include flex(flex-start, space-between, row, null);
+						@include xxs{
+							@include flex(flex-start, flex-start, column, 1rem);
+						}
 						h4 {
 							@include font($primaryFont, 2rem, $subheading);
 						}

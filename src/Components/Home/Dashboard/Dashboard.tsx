@@ -1,18 +1,65 @@
+import React from 'react'
 import AreaChart from '../AreaChart/AreaChart';
 import BarChart from '../BarChart/BarChart';
 import PieChart from '../PieChart/PieChart';
 import styles from './styles.module.scss';
-import {
-	LuArrowDownRight,
-	LuArrowUpLeft,
-} from 'react-icons/lu';
+import { LuArrowDownRight, LuArrowUpLeft } from 'react-icons/lu';
 import { FaDollarSign } from 'react-icons/fa';
-const Dashboard = () => {
+import ProductCard from '../ProductCard/ProductCard';
+import CardImage from './../../../assets/CardMedia.jpg';
+import Teddy from './../../../assets/teddy.jpg'
+import Canon from './../../../assets/Canon.jpg'
+import Burger from './../../../assets/Burger.jpg'
+import Airpods from './../../../assets/Airpods.jpg'
+interface prodcutListProps {
+	uuid: number;
+	name: string;
+	imageUrl: string;
+	price: string;
+	offerPrice: string;
+	alt: string;
+}
+
+const productList: prodcutListProps[] = [
+	{
+		uuid: 1,
+		name: 'Airpods Pro',
+		alt: 'airpods',
+		imageUrl: Airpods,
+		price: '165',
+		offerPrice: '150',
+	},
+	{
+		uuid: 2,
+		name: 'Canon Canonet 28',
+		alt: 'canon ',
+		imageUrl: Canon,
+		price: '120',
+		offerPrice: '100',
+	},
+	{
+		uuid: 3,
+		name: 'Vegan quinoa burger',
+		alt: 'burger',
+		imageUrl: Burger,
+		price: '40',
+		offerPrice: '30',
+	},
+	{
+		uuid: 4,
+		name: 'cute soft teddybear',
+		alt: 'teddy',
+		imageUrl: Teddy,
+		price: '10',
+		offerPrice: '5',
+	},
+];
+const Dashboard: React.FC = () => {
 	return (
 		<main className={styles.main}>
 			<section className={styles.section}>
 				<section className={styles.row}>
-					<div className={styles.left}>
+					<div className={`${styles.left} ${styles.card_wrapper}`}>
 						<div className={styles.card}>
 							<section className={styles.top_row}>
 								<h4>sales overview</h4>
@@ -21,7 +68,7 @@ const Dashboard = () => {
 							<BarChart />
 						</div>
 					</div>
-					<div className={styles.right}>
+					<div className={`${styles.right} ${styles.card_wrapper}`}>
 						<div className={styles.card}>
 							<section className={styles.top_row}>
 								<h4>Yearly Breakup</h4>
@@ -91,7 +138,16 @@ const Dashboard = () => {
 					</div>
 				</section>
 
-				<section className={styles.row}>
+				<section className={`${styles.row} ${styles.product_row}`}>
+					{productList?.map((product)=>{
+						return(
+							<React.Fragment key={product?.uuid}>
+
+								<ProductCard product={product} />
+
+							</React.Fragment>
+						)
+					})}
 				</section>
 			</section>
 		</main>

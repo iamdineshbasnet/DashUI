@@ -1,4 +1,5 @@
 @import './styles/variables';
+@import './styles/mixins';
 
 *,
 *::after,
@@ -24,91 +25,38 @@ body {
 	.apexcharts-inner {
 		transform: translate(0, 0%) !important;
 	}
-    .apexcharts-yaxis-label {
-        display: none;
-    }
-    .apexcharts-xaxis-label {
-        display: none;
-    }
-}
-// #pie_chart {
-// 	div {
-// 		.apexcharts-canvas {
-// 			.apexcharts-svg {
-// 				width: 100%;
-// 				border: 1px solid green;
-// 				.apexcharts-inner {
-// 					background: #000 !important;
-
-// 					.apexcharts-pie {
-// 						g {
-// 							.apexcharts-slices {
-// 								.apexcharts-pie-series {
-// 									path {
-//                                         stroke-opacity: 0 !important;
-// 									}
-// 								}
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 			.apexcharts-tooltip {
-// 				border: 1px solid red;
-// 				border-radius: 5px !important;
-// 				box-shadow: 2px 2px 6px -4px #999;
-// 				cursor: default;
-// 				font-size: 14px;
-// 				left: 62px;
-// 				opacity: 0;
-// 				pointer-events: none;
-// 				position: absolute;
-// 				top: 20px;
-// 				display: flex;
-// 				flex-direction: column;
-// 				overflow: hidden;
-// 				white-space: nowrap;
-// 				z-index: 12;
-// 				transition: 0.15s ease all;
-// 				&.apexcharts-theme-dark {
-// 					color: #fff !important;
-// 					background: rgba(30, 30, 30, 0.8) !important;
-// 				}
-// 				.apexcharts-tooltip-series-group {
-// 					padding: 0 10px;
-// 					display: flex;
-// 					text-align: left;
-// 					justify-content: left;
-// 					align-items: center;
-// 					&.apexcharts-active,
-// 					&:last-child {
-// 						padding-bottom: 4px;
-// 						display: block;
-// 					}
-// 					.apexcharts-tooltip-marker {
-// 						width: 12px;
-// 						height: 12px;
-// 						position: relative;
-// 						top: 0;
-// 						margin-right: 10px;
-// 						border-radius: 50%;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-.apexcharts-bar-series{
-    .apexcharts-series{
-        .apexcharts-bar-area{
-            stroke-linecap: butt !important;
-
-        }
-    }
+	.apexcharts-yaxis-label {
+		display: none;
+	}
+	.apexcharts-xaxis-label {
+		display: none;
+	}
 }
 
-.apexcharts-menu-item{
-    width: max-content;
+#pie_chart {
+	min-width: 15rem !important;
 
+	div {
+		.apexcharts-canvas {
+			display: flex;
+			justify-content: flex-start;
+			max-width: 15rem;
+			.apexcharts-svg {
+				// max-width: 15rem;
+				@include flex(center, center, row, null);
+			}
+		}
+	}
+}
+
+.apexcharts-bar-series {
+	.apexcharts-series {
+		.apexcharts-bar-area {
+			stroke-linecap: butt !important;
+		}
+	}
+}
+
+.apexcharts-menu-item {
+	width: max-content;
 }
