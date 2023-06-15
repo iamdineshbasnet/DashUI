@@ -1,0 +1,77 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.timeline {
+	@include flex(flex-start, flex-start, column, 3rem);
+    width: fit-content;
+	.timeline_item {
+		@include flex(flex-start, flex-start, row, 2rem);
+		position: relative;
+        @include xs{
+            gap: .5rem;
+        }
+
+		&:last-child {
+			.vertical_line {
+				display: none;
+			}
+		}
+
+		.timeline_time {
+			@include font($primaryFont, 1.4rem, $title);
+			line-height: 1.2;
+			text-align: right;
+			text-transform: lowercase;
+			max-width: 10rem;
+            min-width: 8rem;
+            @include xxs{
+                font-size: 1.1rem;
+                min-width: 6rem;
+            }
+		}
+
+		.timeline_dot {
+			max-width: 1.2rem;
+			min-width: 1.2rem;
+			max-height: 1.2rem;
+			min-height: 1.2rem;
+			border-radius: 50%;
+			border: 0.2rem solid $primaryColor;
+			position: relative;
+			background-color: white;
+			.vertical_line {
+				width: 0.1rem;
+				height: 5.5rem;
+				background: rgb(220, 220, 220);
+
+				@include position(absolute, null, -0rem, 50%, null, -50%, 100%);
+				z-index: -1;
+			}
+		}
+
+		.timeline_content {
+            max-width: 20rem;
+			p {
+				@include font($primaryFont, 1.3rem, $title);
+				line-height: 1.2;
+				text-align: left;
+                width: fit-content;
+                @include xxs{
+                    font-size: 1.1rem;
+                }
+				&.bold {
+                    font-weight: $subheading;
+				}
+			}
+            a{
+                color: $primaryColor;
+                display: block;
+                @include font($primaryFont, 1.3rem, $text);
+
+                @include xxs{
+                    font-size: 1.1rem;
+                }
+            }
+		}
+	}
+}

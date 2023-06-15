@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import AreaChart from '../AreaChart/AreaChart';
 import BarChart from '../BarChart/BarChart';
 import PieChart from '../PieChart/PieChart';
@@ -7,10 +7,11 @@ import { LuArrowDownRight, LuArrowUpLeft } from 'react-icons/lu';
 import { FaDollarSign } from 'react-icons/fa';
 import ProductCard from '../ProductCard/ProductCard';
 import CardImage from './../../../assets/CardMedia.jpg';
-import Teddy from './../../../assets/teddy.jpg'
-import Canon from './../../../assets/Canon.jpg'
-import Burger from './../../../assets/Burger.jpg'
-import Airpods from './../../../assets/Airpods.jpg'
+import Teddy from './../../../assets/teddy.jpg';
+import Canon from './../../../assets/Canon.jpg';
+import Burger from './../../../assets/Burger.jpg';
+import Airpods from './../../../assets/Airpods.jpg';
+import Timeline from '../Timeline/Timeline';
 interface prodcutListProps {
 	uuid: number;
 	name: string;
@@ -32,7 +33,7 @@ const productList: prodcutListProps[] = [
 	{
 		uuid: 2,
 		name: 'Canon Canonet 28',
-		alt: 'canon ',
+		alt: 'canon  ',
 		imageUrl: Canon,
 		price: '120',
 		offerPrice: '100',
@@ -138,15 +139,25 @@ const Dashboard: React.FC = () => {
 					</div>
 				</section>
 
+				<section className={styles.row}>
+					<div className={`${styles.left} ${styles.card_wrapper}`}>
+						<div className={styles.card}>
+							<section className={styles.top_row}>
+								<h4>Recent transaction</h4>
+							</section>
+
+							<Timeline />
+						</div>
+					</div>
+				</section>
+
 				<section className={`${styles.row} ${styles.product_row}`}>
-					{productList?.map((product)=>{
-						return(
+					{productList?.map((product) => {
+						return (
 							<React.Fragment key={product?.uuid}>
-
 								<ProductCard product={product} />
-
 							</React.Fragment>
-						)
+						);
 					})}
 				</section>
 			</section>
