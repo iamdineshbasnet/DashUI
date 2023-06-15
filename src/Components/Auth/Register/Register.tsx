@@ -17,7 +17,7 @@ const Register = () => {
 				</div>
 
 				<div className={styles.title}>
-					<p>Your social campaigns</p>
+					<p>Your social campaigns </p>
 				</div>
 				<form action="#">
 					<div className={styles.input_group}>

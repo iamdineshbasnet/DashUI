@@ -1,0 +1,46 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.main {
+	@include main;
+
+	.section {
+		padding: 0 4rem;
+		width: 100%;
+		@include sm {
+			padding: 0 2rem;
+		}
+
+		.outer_card {
+			box-shadow: 0.1rem 0.1rem 0.5rem rgba($color: #000000, $alpha: 0.1);
+			padding: 3rem 4rem;
+			border-radius: 0.4rem;
+			@include sm {
+				padding: 2rem 1.5rem;
+			}
+			.lists {
+				li {
+					list-style: none;
+					&:not(:last-child) {
+						margin-bottom: 6rem;
+					}
+					h6 {
+						@include font($primaryFont, 1.6rem, $subheading);
+						text-transform: capitalize;
+					}
+					.inner_card {
+						margin-top: 1rem;
+						box-shadow: 0.1rem 0.1rem 0.5rem
+							rgba($color: #000000, $alpha: 0.1);
+						// padding: 3rem 2rem;
+						border-radius: 0.4rem;
+						iframe{
+                            width: 100%;
+                            height: 60rem;
+                        }
+					}
+				}
+			}
+		}
+	}
+}

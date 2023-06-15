@@ -10,6 +10,7 @@ import Typography from './Components/UI/TypographyComponents/Typography';
 import Forms from './Components/UI/FormsComponent/Forms';
 import Login from './Components/Auth/Login/Login';
 import Register from './Components/Auth/Register/Register';
+import Icons from './Components/Extra/Icons/Icons';
 function App() {
 	return (
 		<>
@@ -24,6 +25,7 @@ function App() {
 					<Route path="/typography" element={<Layout><Typography /></Layout>} />
 					<Route path="/login" element={<><Login /></>} />
 					<Route path="/register" element={<><Register /></>} />
+					<Route path="/icons" element={<Layout><Icons /></Layout>} />
 				</Routes>
 			</Provider>
 		</>
