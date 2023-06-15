@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-interface ChartData {
-	name: string;
-	data: number[];
-}
 
 const BarChart: React.FC = () => {
-	const [series, setSeries] = useState<ChartData[]>([
+	const series = [
 		{
 			name: 'Earnings this month',
 			data: [244, 255, 357, 156, 361, 258, 260, 230],
@@ -16,9 +12,9 @@ const BarChart: React.FC = () => {
 			name: 'Expense this month',
 			data: [276, 385, 201, 298, 187, 205, 391, 214],
 		},
-	]);
+	];
 
-	const [options, setOptions] = useState<any>({
+	const options: any = {
 		chart: {
 			type: 'bar',
 			height: 350,
@@ -27,10 +23,8 @@ const BarChart: React.FC = () => {
 			bar: {
 				horizontal: false,
 				columnWidth: '30%',
-				enableRounded: true,
-				borderRadiusApplication: 'around',
-				borderRadius: 0,
-				isFunnel3d: true,
+				endingShape: 'rounded',
+				startingShape: 'rounded',
 			},
 		},
 		dataLabels: {
@@ -67,8 +61,8 @@ const BarChart: React.FC = () => {
 		},
 		legend: {
 			show: false,
-		}
-	});
+		},
+	};
 
 	return (
 		<>

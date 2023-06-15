@@ -82,7 +82,7 @@
 						.date {
 							margin-top: 1.5rem;
 							@include flex(center, flex-start, row, 3rem);
-							p {
+							.text{
 								@include font($primaryFont, 1.2rem, $title);
 								position: relative;
 								@include flex(center, flex-start, row, 1rem);

@@ -6,15 +6,15 @@ const AreaChart: React.FC = () => {
 		{
 			name: 'Earnings',
 			data: [
-				25, 27, 25, 30, 27, 28, 24, 25, 24, 25, 26, 24, 23, 30, 24, 25,
-				22, 25, 26, 28, 26,
+				15, 27, 25, 29, 27, 28, 24, 25, 24, 25, 26, 24, 23, 32, 24, 25,
+				22, 25, 26, 28, 12,
 			],
 		},
 	];
 	const options: any = {
 		chart: {
 			type: 'area',
-			height: 500,
+			height: 400,
 			toolbar: {
 				autoSelected: 'zoom',
 				show: false,
@@ -37,9 +37,9 @@ const AreaChart: React.FC = () => {
 			labels: {
 				formatter: (value: number) => {
 					if (value) {
-						return '';
+						return value;
 					}
-					return '';
+					return value;
 				},
 			},
 		},
@@ -70,9 +70,9 @@ const AreaChart: React.FC = () => {
 			labels: {
 				formatter: (value: string) => {
 					if (value) {
-						return '';
+						return "";
 					}
-					return '';
+					return "";
 				},
 			},
 			tooltip: {
@@ -115,7 +115,7 @@ const AreaChart: React.FC = () => {
 				options={options}
 				series={series}
 				type="area"
-				height="105px"
+				height="120px"
 				width="100%"
 			/>
 		</section>

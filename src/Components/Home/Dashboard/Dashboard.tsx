@@ -2,7 +2,10 @@ import AreaChart from '../AreaChart/AreaChart';
 import BarChart from '../BarChart/BarChart';
 import PieChart from '../PieChart/PieChart';
 import styles from './styles.module.scss';
-import { LuArrowDownLeft, LuArrowDownRight, LuArrowUpLeft } from 'react-icons/lu';
+import {
+	LuArrowDownRight,
+	LuArrowUpLeft,
+} from 'react-icons/lu';
 import { FaDollarSign } from 'react-icons/fa';
 const Dashboard = () => {
 	return (
@@ -40,16 +43,16 @@ const Dashboard = () => {
 									</div>
 
 									<div className={styles.date}>
-										<p>
+										<div className={styles.text}>
 											<div
 												className={`${styles.circle} ${styles.filled_circle}`}></div>
 											2023
-										</p>
-										<p>
+										</div>
+										<div className={styles.text}>
 											<div
 												className={styles.circle}></div>
 											2023
-										</p>
+										</div>
 									</div>
 								</div>
 								<PieChart />
@@ -64,9 +67,9 @@ const Dashboard = () => {
 								</div>
 							</section>
 
-              <section className={styles.area_card_content}>
+							<section className={styles.area_card_content}>
 								<div>
-									<h4>$6,265</h4>
+									<h4>$6,265 </h4>
 									<div className={styles.text}>
 										<section
 											className={styles.icon_wrapper}>
@@ -78,8 +81,6 @@ const Dashboard = () => {
 											+9% <span>last year</span>
 										</p>
 									</div>
-
-									
 								</div>
 							</section>
 
@@ -88,6 +89,9 @@ const Dashboard = () => {
 							</section>
 						</div>
 					</div>
+				</section>
+
+				<section className={styles.row}>
 				</section>
 			</section>
 		</main>

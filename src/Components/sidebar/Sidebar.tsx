@@ -34,7 +34,6 @@ const Sidebar = () => {
 	// selector
 	const { showAppSideBar } = useSelector(commonAppSelector);
 
-	console.log(showAppSideBar, 'showAppSideBar');
 	const handleActiveItem = (name: string) => {
 		setActiveItem(name);
 		dispatch(openAppSideBar(false))

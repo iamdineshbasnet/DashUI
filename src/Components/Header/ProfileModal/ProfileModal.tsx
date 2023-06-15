@@ -5,13 +5,12 @@ import { commonAppSelector } from '../../Redux/selector';
 import { useSelector, useDispatch } from 'react-redux';
 import { openAppModal } from '../../Redux/commonSlice';
 const ProfileModal = () => {
-    const dispatch = useDispatch()
+	const dispatch = useDispatch();
 	const { appModal } = useSelector(commonAppSelector);
 
-
-    const handleNavigation = (url: string)=>{
-        dispatch(openAppModal(""))
-    }
+	const handleNavigation = () => {
+		dispatch(openAppModal(''));
+	};
 	return (
 		<section
 			className={`${styles.profile_modal} ${
@@ -19,15 +18,15 @@ const ProfileModal = () => {
 			}`}>
 			<div className={styles.container}>
 				<ul className={styles.list}>
-					<li onClick={()=>handleNavigation("profile")}>
+					<li onClick={() => handleNavigation()}>
 						<IoPersonOutline className={styles.icon} />
 						<p className={styles.text}>my profile</p>
 					</li>
-					<li onClick={()=>handleNavigation("account")}>
+					<li onClick={() => handleNavigation()}>
 						<MdOutlineEmail className={styles.icon} />
 						<p className={styles.text}>my account</p>
 					</li>
-					<li onClick={()=>handleNavigation("task")}>
+					<li onClick={() => handleNavigation()}>
 						<MdOutlineChecklistRtl className={styles.icon} />
 						<p className={styles.text}>my task</p>
 					</li>

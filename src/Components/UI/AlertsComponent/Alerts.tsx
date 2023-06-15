@@ -70,8 +70,8 @@ const Alerts = () => {
 		},
 		light: {
 			message: 'light alert!',
-			background: '#f6f9fc',
-			progressColor: '#f6f9fc',
+			background: '#2a3547',
+			progressColor: '#2a3547',
 			icon: (
 				<BsEmojiSunglassesFill
 					style={{ marginRight: '1rem', fontSize: '2rem' }}
@@ -80,8 +80,8 @@ const Alerts = () => {
 		},
 		dark: {
 			message: 'dark alert!',
-			background: '#2a3547',
-			progressColor: '#2a3547',
+			background: '#f6f9fc',
+			progressColor: '#f6f9fc',
 			icon: (
 				<BsFillEmojiSmileUpsideDownFill
 					style={{ marginRight: '0.5rem', fontSize: '2rem' }}
@@ -108,7 +108,7 @@ const Alerts = () => {
 			progressStyle: { background: progressColor },
 		};
 
-		if (name === 'light') {
+		if (name === 'dark') {
 			toastOptions.theme = 'dark';
 		}
 

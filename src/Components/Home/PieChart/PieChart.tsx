@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
+import 'apexcharts/dist/apexcharts.css';
 
 const PieChart: React.FC = () => {
 	const series = [35, 40, 25];
@@ -20,10 +21,15 @@ const PieChart: React.FC = () => {
 		legend: {
 			show: false,
 		},
+		tooltip: {
+			theme: 'dark',
+			enabled: true,
+		}
 	};
 
 	return (
 		<section
+			id="pie_chart"
 			style={{
 				maxWidth: '15rem',
 				display: 'flex',

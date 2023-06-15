@@ -69,7 +69,7 @@ const Forms = () => {
 											</label>
 										</div>
 									</section>
-									<button>submit</button>
+									<button type='button'>submit</button>
 								</form>
 							</div>
 						</li>

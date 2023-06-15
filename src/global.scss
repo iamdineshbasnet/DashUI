@@ -1,29 +1,114 @@
 @import './styles/variables';
 
-*, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $primaryFont;
-    user-select: text;
-
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $primaryFont;
+	user-select: text;
 }
 
-html{
-    font-size: 62.5%;
+html {
+	font-size: 62.5%;
 }
 
-body{
-    background-color: #FFF;
-    max-height: 100vh;
+body {
+	background-color: #fff;
+	max-height: 100vh;
 	overflow: hidden;
-
 }
 
-
-#area_chart{
-    .apexcharts-inner {
-        transform: translate(0,0%)  !important;
+#area_chart {
+	.apexcharts-inner {
+		transform: translate(0, 0%) !important;
+	}
+    .apexcharts-yaxis-label {
+        display: none;
     }
+    .apexcharts-xaxis-label {
+        display: none;
+    }
+}
+// #pie_chart {
+// 	div {
+// 		.apexcharts-canvas {
+// 			.apexcharts-svg {
+// 				width: 100%;
+// 				border: 1px solid green;
+// 				.apexcharts-inner {
+// 					background: #000 !important;
+
+// 					.apexcharts-pie {
+// 						g {
+// 							.apexcharts-slices {
+// 								.apexcharts-pie-series {
+// 									path {
+//                                         stroke-opacity: 0 !important;
+// 									}
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 			.apexcharts-tooltip {
+// 				border: 1px solid red;
+// 				border-radius: 5px !important;
+// 				box-shadow: 2px 2px 6px -4px #999;
+// 				cursor: default;
+// 				font-size: 14px;
+// 				left: 62px;
+// 				opacity: 0;
+// 				pointer-events: none;
+// 				position: absolute;
+// 				top: 20px;
+// 				display: flex;
+// 				flex-direction: column;
+// 				overflow: hidden;
+// 				white-space: nowrap;
+// 				z-index: 12;
+// 				transition: 0.15s ease all;
+// 				&.apexcharts-theme-dark {
+// 					color: #fff !important;
+// 					background: rgba(30, 30, 30, 0.8) !important;
+// 				}
+// 				.apexcharts-tooltip-series-group {
+// 					padding: 0 10px;
+// 					display: flex;
+// 					text-align: left;
+// 					justify-content: left;
+// 					align-items: center;
+// 					&.apexcharts-active,
+// 					&:last-child {
+// 						padding-bottom: 4px;
+// 						display: block;
+// 					}
+// 					.apexcharts-tooltip-marker {
+// 						width: 12px;
+// 						height: 12px;
+// 						position: relative;
+// 						top: 0;
+// 						margin-right: 10px;
+// 						border-radius: 50%;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+.apexcharts-bar-series{
+    .apexcharts-series{
+        .apexcharts-bar-area{
+            stroke-linecap: butt !important;
+
+        }
+    }
+}
+
+.apexcharts-menu-item{
+    width: max-content;
 
 }
