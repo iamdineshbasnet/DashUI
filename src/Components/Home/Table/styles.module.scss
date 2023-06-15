@@ -1,0 +1,64 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+$high: $primaryColor;
+$medium: $secondary;
+$low: $danger;
+$critical: $success;
+.app_table {
+    overflow-x: scroll;
+    min-width: 60rem;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+	.table {
+		width: 100%;
+
+		.table_row {
+			text-align: left;
+			.table_heading {
+				min-width: 3rem;
+				text-transform: capitalize;
+				@include font($primaryFont, 1.4rem, $subheading);
+			}
+			.table_data {
+				@include font($primaryFont, 1.4rem, $subheading);
+				padding: 3.8rem 0 0;
+				text-transform: capitalize;
+				.role {
+					@include font($primaryFont, 1.4rem, $text);
+					color: gray;
+				}
+				&.name {
+					@include font($primaryFont, 1.4rem, $text);
+					color: gray;
+				}
+				&.priority {
+					.chip {
+						background: $primaryColor;
+						width: max-content;
+						padding: 0.4rem 1.2rem;
+						border-radius: 10rem;
+						text-transform: capitalize;
+						color: white;
+						&.high {
+							background: $high;
+						}
+						&.low {
+							background: $low;
+						}
+						&.medium {
+							background: $medium;
+						}
+						&.critical {
+							background: $critical;
+						}
+					}
+				}
+				&.budget {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+}

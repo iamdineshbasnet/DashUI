@@ -12,6 +12,7 @@ import Canon from './../../../assets/Canon.jpg';
 import Burger from './../../../assets/Burger.jpg';
 import Airpods from './../../../assets/Airpods.jpg';
 import Timeline from '../Timeline/Timeline';
+import AppTable from '../Table/AppTable';
 interface prodcutListProps {
 	uuid: number;
 	name: string;
@@ -139,14 +140,26 @@ const Dashboard: React.FC = () => {
 					</div>
 				</section>
 
-				<section className={styles.row}>
-					<div className={`${styles.left} ${styles.card_wrapper}`}>
+				<section className={`${styles.row} ${styles.table_row}`}>
+					<div className={`${styles.left} ${styles.card_wrapper} ${styles.timeline_container}`}>
 						<div className={styles.card}>
 							<section className={styles.top_row}>
 								<h4>Recent transaction</h4>
 							</section>
 
 							<Timeline />
+						</div>
+					</div>
+					<div
+						className={`${styles.left} ${styles.card_wrapper} ${styles.table_container}`}>
+						<div className={styles.card}>
+							<section className={styles.top_row}>
+								<h4>Recent transaction</h4>
+							</section>
+
+							<section className={styles.scroll}>
+								<AppTable />
+							</section>
 						</div>
 					</div>
 				</section>

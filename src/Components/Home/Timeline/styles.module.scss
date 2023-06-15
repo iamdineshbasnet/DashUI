@@ -2,6 +2,7 @@
 @import '../../../styles/variables';
 
 .timeline {
+	margin-top: 3rem;
 	@include flex(flex-start, flex-start, column, 3rem);
     width: fit-content;
 	.timeline_item {

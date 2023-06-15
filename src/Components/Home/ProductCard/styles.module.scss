@@ -3,7 +3,7 @@
 
 .card_wrapper {
 	.card {
-		box-shadow: 1rem 1rem 1rem rgba($color: #000000, $alpha: 0.1);
+		box-shadow: .2rem .2rem .5rem rgba($color: #000000, $alpha: 0.1);
 		border: 0.1rem solid rgb(214, 214, 214);
 		border-radius: 0.6rem;
 		overflow: hidden;
@@ -27,6 +27,7 @@
 				border-radius: 50%;
 				@include position(absolute, null, 0, null, 2.5rem, 0, 50%);
 				@include flex(center, center, row, null);
+				cursor: pointer;
 				.icon {
 					color: white;
 					font-size: 1.8rem;
