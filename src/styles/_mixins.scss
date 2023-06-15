@@ -80,8 +80,8 @@
 }
 
 @mixin main{
-    @include position(absolute, 6rem, null, 30rem, null, null, null);
-	width: calc(100vw - 30rem);
+    @include position(absolute, 6rem, null, 26rem, null, null, null);
+	width: calc(100vw - 26rem);
     max-width: 120rem;
     overflow: scroll;
 	max-height: calc(100vh - 6rem);

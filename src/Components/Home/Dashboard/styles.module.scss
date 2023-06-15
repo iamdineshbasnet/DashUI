@@ -54,6 +54,7 @@
 					grid-template-columns: repeat(1, 1fr);
 				}
 			}
+			
 			.card_wrapper {
 				.card {
 					width: 100%;
@@ -159,6 +160,19 @@
 
 				&.right {
 					@include flex(flex-start, space-between, column, 2rem);
+				}
+			}
+		}
+		.footer{
+			text-align: center;
+			width: 100%;
+			margin-bottom: -4rem;
+			h3{
+				width: 100%;
+				@include font($primaryFont, 1.6rem, $title);
+				color: gray;
+				a{
+					color: $primaryColor;
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import Logo from '../../assets/Logo.svg';
 import {
@@ -21,36 +21,42 @@ import { commonAppSelector } from '../Redux/selector';
 import { useSelector, useDispatch } from 'react-redux';
 import { openAppSideBar } from '../Redux/commonSlice';
 
-const Sidebar = () => {
-
+const Sidebar: React.FC = () => {
 	// dispatch
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 	// hooks
 	const navigate = useNavigate();
 
 	//states
-	const [activeItem, setActiveItem] = useState<string>('dashboard');
+	const [activeItem, setActiveItem] = useState<string>('/');
 
 	// selector
 	const { showAppSideBar } = useSelector(commonAppSelector);
+	const currentPath = window.location.pathname;
+
+	useEffect(() => {
+		setActiveItem(currentPath);
+	}, [currentPath]);
 
 	const handleActiveItem = (name: string) => {
 		setActiveItem(name);
-		dispatch(openAppSideBar(false))
-		if (name === 'dashboard') {
+		dispatch(openAppSideBar(false));
+		if (name === '/') {
 			navigate('/');
 		} else {
-			navigate(`/${name}`);
+			navigate(`${name}`);
 		}
 	};
 
-	const handleCloseSideBar = () =>{
-		dispatch(openAppSideBar(false))
-	}
+	const handleCloseSideBar = () => {
+		dispatch(openAppSideBar(false));
+	};
 
 	return (
 		<aside className={`${styles.aside} ${showAppSideBar && styles.active}`}>
-			<div className={styles.close_icon} onClick={()=>handleCloseSideBar()}>
+			<div
+				className={styles.close_icon}
+				onClick={() => handleCloseSideBar()}>
 				<MdOutlineMenuOpen className={styles.icon} />
 			</div>
 			<section className={styles.section}>
@@ -63,9 +69,9 @@ const Sidebar = () => {
 						<h6 className={styles.title}>home</h6>
 						<ul className={styles.items}>
 							<li
-								onClick={() => handleActiveItem('dashboard')}
+								onClick={() => handleActiveItem('/')}
 								className={`${
-									activeItem === 'dashboard' && styles.active
+									activeItem === '/' && styles.active
 								}`}>
 								<MdOutlineDashboard className={styles.icon} />
 								<p>Dashboard</p>
@@ -76,33 +82,33 @@ const Sidebar = () => {
 						<h6 className={styles.title}>ui components</h6>
 						<ul className={styles.items}>
 							<li
-								onClick={() => handleActiveItem('buttons')}
+								onClick={() => handleActiveItem('/buttons')}
 								className={`${
-									activeItem === 'buttons' && styles.active
+									activeItem === '/buttons' && styles.active
 								}`}>
 								<MdOutlineSmartButton className={styles.icon} />
 								<p>buttons</p>
 							</li>
 							<li
-								onClick={() => handleActiveItem('alerts')}
+								onClick={() => handleActiveItem('/alerts')}
 								className={`${
-									activeItem === 'alerts' && styles.active
+									activeItem === '/alerts' && styles.active
 								}`}>
 								<IoAlertCircleOutline className={styles.icon} />
 								<p>alerts</p>
 							</li>
 							<li
-								onClick={() => handleActiveItem('cards')}
+								onClick={() => handleActiveItem('/cards')}
 								className={`${
-									activeItem === 'cards' && styles.active
+									activeItem === '/cards' && styles.active
 								}`}>
 								<GoVersions className={styles.icon} />
 								<p>card</p>
 							</li>
 							<li
-								onClick={() => handleActiveItem('forms')}
+								onClick={() => handleActiveItem('/forms')}
 								className={`${
-									activeItem === 'forms' && styles.active
+									activeItem === '/forms' && styles.active
 								}`}>
 								<IoDocumentTextOutline
 									className={styles.icon}
@@ -110,9 +116,10 @@ const Sidebar = () => {
 								<p>Forms</p>
 							</li>
 							<li
-								onClick={() => handleActiveItem('typography')}
+								onClick={() => handleActiveItem('/typography')}
 								className={`${
-									activeItem === 'typography' && styles.active
+									activeItem === '/typography' &&
+									styles.active
 								}`}>
 								<TbTypography className={styles.icon} />
 								<p>typography</p>
@@ -123,17 +130,17 @@ const Sidebar = () => {
 						<h6 className={styles.title}>auth</h6>
 						<ul className={styles.items}>
 							<li
-								onClick={() => handleActiveItem('login')}
+								onClick={() => handleActiveItem('/login')}
 								className={`${
-									activeItem === 'login' && styles.active
+									activeItem === '/login' && styles.active
 								}`}>
 								<IoLogInOutline className={styles.icon} />
 								<p>login</p>
 							</li>
 							<li
-								onClick={() => handleActiveItem('register')}
+								onClick={() => handleActiveItem('/register')}
 								className={`${
-									activeItem === 'register' && styles.active
+									activeItem === '/register' && styles.active
 								}`}>
 								<IoPersonAddOutline className={styles.icon} />
 								<p>register</p>
@@ -144,9 +151,9 @@ const Sidebar = () => {
 						<h6 className={styles.title}>extra</h6>
 						<ul className={styles.items}>
 							<li
-								onClick={() => handleActiveItem('icons')}
+								onClick={() => handleActiveItem('/icons')}
 								className={`${
-									activeItem === 'icons' && styles.active
+									activeItem === '/icons' && styles.active
 								}`}>
 								<MdOutlineEmojiEmotions
 									className={styles.icon}
@@ -154,9 +161,10 @@ const Sidebar = () => {
 								<p>icons</p>
 							</li>
 							<li
-								onClick={() => handleActiveItem('samplepage')}
+								onClick={() => handleActiveItem('/samplepage')}
 								className={`${
-									activeItem === 'samplepage' && styles.active
+									activeItem === '/samplepage' &&
+									styles.active
 								}`}>
 								<LuChrome className={styles.icon} />
 								<p>sample page</p>

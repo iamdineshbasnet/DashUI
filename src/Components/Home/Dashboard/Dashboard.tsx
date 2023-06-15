@@ -173,6 +173,11 @@ const Dashboard: React.FC = () => {
 						);
 					})}
 				</section>
+
+
+				<section className={` ${styles.footer}`}>
+					<h3>Design and Developed by <a href="https://github.com/iamdineshbasnet">Dinesh Basnet</a></h3>
+				</section>
 			</section>
 		</main>
 	);

@@ -1,10 +1,14 @@
 import styles from './styles.module.scss';
-import { MdOutlineNotificationsActive, MdOutlineMenuOpen } from 'react-icons/md';
+import {
+	MdOutlineNotificationsActive,
+	MdOutlineMenuOpen,
+} from 'react-icons/md';
 import ProfileImage from '../../assets/ProfileImage.jpg';
 import ProfileModal from './ProfileModal/ProfileModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { openAppModal, openAppSideBar } from '../Redux/commonSlice';
 import { commonAppSelector } from '../Redux/selector';
+import {Link} from 'react-router-dom'
 const Header = () => {
 	const dispatch = useDispatch();
 	const { appModal } = useSelector(commonAppSelector);
@@ -17,14 +21,16 @@ const Header = () => {
 		}
 	};
 
-	const handleShowAppSideBar = () =>{
-		dispatch(openAppSideBar(true))
-	}
+	const handleShowAppSideBar = () => {
+		dispatch(openAppSideBar(true));
+	};
 	return (
 		<header className={styles.header}>
 			<nav>
 				<section className={styles.row}>
-					<div className={styles.icon_wrapper} onClick={()=>handleShowAppSideBar()}>
+					<div
+						className={styles.icon_wrapper}
+						onClick={() => handleShowAppSideBar()}>
 						<MdOutlineMenuOpen className={styles.icon} />
 					</div>
 					<div className={styles.icon_wrapper}>
@@ -33,6 +39,9 @@ const Header = () => {
 					</div>
 				</section>
 				<section className={styles.row}>
+					<Link to="https://github.com/iamdineshbasnet/DashUI" target="_blank" rel="noopener noreferrer">
+					<button>Source Code</button>
+					</Link>
 					<div
 						className={styles.image_wrapper}
 						onClick={() => handleAppModal('profileModal')}>

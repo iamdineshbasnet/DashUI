@@ -2,8 +2,8 @@
 @import '../../styles/variables';
 
 .header{
-    @include position(absolute, 0, null, 30rem, null, null, null);
-    width: calc(100vw - 30rem);
+    @include position(absolute, 0, null, 26rem, null, null, null);
+    width: calc(100vw - 26rem);
     max-width: 120rem;
     @include md{
         left: 0;
@@ -58,6 +58,15 @@
                     @include position(absolute, .8rem, null, null, .4rem, null, null);
                 }
 
+            }
+            button{
+                @include button(max-content);
+                font-weight: $subheading;
+                margin-right: 2rem;
+                a{
+                    color: inherit;
+                    text-decoration: none;
+                }
             }
             .image_wrapper{
                 border-radius: 50%;
