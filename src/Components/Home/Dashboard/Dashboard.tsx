@@ -6,7 +6,6 @@ import styles from './styles.module.scss';
 import { LuArrowDownRight, LuArrowUpLeft } from 'react-icons/lu';
 import { FaDollarSign } from 'react-icons/fa';
 import ProductCard from '../ProductCard/ProductCard';
-import CardImage from './../../../assets/CardMedia.jpg';
 import Teddy from './../../../assets/teddy.jpg';
 import Canon from './../../../assets/Canon.jpg';
 import Burger from './../../../assets/Burger.jpg';

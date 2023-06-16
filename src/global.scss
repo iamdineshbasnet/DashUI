@@ -57,6 +57,30 @@ body {
 	}
 }
 
+.apexcharts-grid-borders{
+	.apexcharts-gridline{
+		stroke: rgb(220, 220, 220);
+		stroke-dasharray: 3;
+		stroke-dashoffset: 3;
+	}
+}
+.apexcharts-yaxis-texts-g,
+.apexcharts-xaxis-texts-g {
+	text {
+		fill: gray;
+		@include font($primaryFont, 1.4rem, $title);
+	}
+
+}
+.apexcharts-grid {
+	.apexcharts-gridlines-horizontal {
+		line {
+			stroke: rgb(220, 220, 220);
+			stroke-dasharray: 3;
+			stroke-dashoffset: 3;
+		}
+	}
+}
 .apexcharts-menu-item {
 	width: max-content;
 }

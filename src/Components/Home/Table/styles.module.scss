@@ -23,7 +23,7 @@ $critical: $success;
 			}
 			.table_data {
 				@include font($primaryFont, 1.4rem, $subheading);
-				padding: 3.8rem 0 0;
+				padding: 3.5rem 0 0;
 				text-transform: capitalize;
 				.role {
 					@include font($primaryFont, 1.4rem, $text);
