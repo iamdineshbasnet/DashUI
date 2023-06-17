@@ -3,6 +3,10 @@
 This is a dashboard application built with React.js and Vite. It showcases various UI components and features including bar chart, pie chart, area chart, timeline, table and many more.
 
 
+## Demo
+
+Checkout the [demo](https://dashboard-swart-one-62.vercel.app/) of an app.
+
 ## Prerequisites
 
 Make sure you have the following dependencies installed before running the application:
