@@ -49,7 +49,7 @@ To preview the production build locally before deployment, use the following com
 yarn preview
 ```
 
-## Contributin
+## Contribution
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
 
